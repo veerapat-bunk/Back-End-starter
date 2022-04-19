@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="profile">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME | Website</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <main>
+        <!-- Navigation Bar -->
+        <header>
+            <nav>
+                <div class="logo"><%= topic %></div>
+                <div class="links">
+                    <% obj_navs.forEach(function(navs){ %>
+                        <a href="#"><%= navs.about %></a>
+                        <a href="#"><%= navs.docs%></a>
+                        <button class="button_med" href="#"><%= navs.bottom %></button>
+                </div>
+                <% }) %>
+            </nav>
+        </header>
+        <!-- Contents -->
+        <section class="info">
+                <h1 class="content_font1"><%= ContentFont1 %></h1>
+                <h4 class="content_font2"><%= ContentFont2 %></h4>
+                <div class="icons">
+                    <!-- Add Parameters that forEach loop -->
+                    <% obj_box.forEach(function(box_icon){ %>
+                    <div class="icon">
+                        <img src= <%= box_icon.icon %> alt="email">
+                        <p class="icon_info"><%= box_icon.text %></p>
+                    </div>
+                    <% }) %>
+                </div>
+               
+              
+        </section>
+        <!-- Feature Bar -->
+        <section class="features">
+            <div class="feature">
+                <!-- Add Parameters that forEach loop -->
+                <% obj_feature.forEach(function(feature){ %>
+                <img src= <%= feature.img %> alt="programming">
+                <div class="feature_info">
+                    <p class="feature_top"><%= feature.top%></p>
+                    <p class="feature_bottom"><%= feature.bottom%></p>
+                </div>
+            </div>
+            <% }) %>
+            
+            <!-- Comment not use
+            <div class="feature">
+                <img src="/aiot.jpg" alt="aiot">
+                <div class="feature_info">
+                    <p class="feature_top">AIoT and Robotics</p>
+                    <p class="feature_bottom">Enjoy Coding and Playing<br><br>
+                        - Python<br> - ROS<br> - Mechanics</p>
+                </div>
+            </div>
+             -->
+            <div class="feature">
+                <div class="feature_info">
+                    <p class="feature_more"><%= feature_more %></p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
